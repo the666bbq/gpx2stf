@@ -1,4 +1,4 @@
-drop your fietsnet knooppunten gpx in this folder and let node to the magic
+drop your (fietsnet/knooppunten/..) gpx in this folder and let node to the magic
 
 run : node index.js
 
