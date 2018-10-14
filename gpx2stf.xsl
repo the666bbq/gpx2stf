@@ -20,7 +20,7 @@
     <altitudeDifferencesDownhill>0</altitudeDifferencesDownhill>
     <rating>0</rating>
     <autor>
-      
+
     </autor>
     <webPortalId/>
     <downloadId>0</downloadId>
@@ -38,9 +38,7 @@
           <userPoint>1</userPoint>
           <routingType>imported</routingType>
           <direction>0</direction>
-          <street>
-
-          </street>
+          <street></street>
           <useForTrack>1</useForTrack>
         </RoutePoint>
       </xsl:for-each>
@@ -53,11 +51,12 @@
           <longitude><xsl:value-of select="./@lon"/></longitude>
           <altitude>0</altitude>
           <name>
+            <![CDATA[
             <xsl:value-of select="./name"/>
-          </name>
-          <description>
+            ]]>
 
-          </description>
+          </name>
+          <description></description>
           <type/>
         </POI>
       </xsl:for-each>
