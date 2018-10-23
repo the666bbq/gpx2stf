@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:output version="1.0" encoding="UTF-8" standalone="yes" indent="yes"/>
+  <xsl:output version="1.0" encoding="UTF-8" standalone="yes" indent="yes" cdata-section-elements="name description"/>
 
   <xsl:template match="/">
     <Route>
@@ -43,7 +43,7 @@
             <useForTrack>1</useForTrack>
           </RoutePoint>
         </xsl:for-each>
-      </Routepoints>
+      </RoutePoints>
 
       <RoutePOIs>
         <xsl:for-each select="/gpx/wpt">
@@ -52,7 +52,7 @@
             <longitude><xsl:value-of select="./@lon"/></longitude>
             <altitude>0</altitude>
             <name><xsl:value-of select="./name"/></name>
-            <description><xsl:value-of select="./name"/></description>
+            <description><xsl:value-of select="./description"/></description>
             <type>cycling</type>
           </POI>
         </xsl:for-each>

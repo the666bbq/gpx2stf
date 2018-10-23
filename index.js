@@ -40,7 +40,16 @@ function transform_xml(data,file){
     var xslt = fs.readFileSync('gpx2stf.xsl', 'utf8');
     const xsl = xmlParse(xslt); // xsltString: string of xslt file contents
 
-    const outXmlString = xsltProcess(xml, xsl); // outXmlString: output xml string.
+    var outXmlString = xsltProcess(xml, xsl); // outXmlString: output xml string.
+
+
+    /* cdata bug ?? */
+    var testen = '<name>test</name>';
+    outXmlString = outXmlString.replace(/<name>/g,'<name><![CDATA[');
+    outXmlString = outXmlString.replace(/<\/name>/g,']]></name>');
+    outXmlString = outXmlString.replace(/<description>/g,'<description><![CDATA[');
+    outXmlString = outXmlString.replace(/<\/description>/g,']]></description>');
+
     //console.log("output :"+outXmlString);
 
 
