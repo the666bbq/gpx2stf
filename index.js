@@ -44,7 +44,6 @@ function transform_xml(data,file){
 
 
     /* cdata bug ?? */
-    var testen = '<name>test</name>';
     outXmlString = outXmlString.replace(/<name>/g,'<name><![CDATA[');
     outXmlString = outXmlString.replace(/<\/name>/g,']]></name>');
     outXmlString = outXmlString.replace(/<description>/g,'<description><![CDATA[');
